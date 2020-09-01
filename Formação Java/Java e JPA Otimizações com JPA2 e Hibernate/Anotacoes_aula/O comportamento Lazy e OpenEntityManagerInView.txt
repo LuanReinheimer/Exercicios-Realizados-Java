@@ -1,6 +1,0 @@
-O que causa a LazyInitializationException?
-
-Ao tentar usar um relacionamento Lazy sem que haja um contexto de persistência ativo, recebemos essa exceção.
-Como vimos, por padrão, o EntityManager se encerra ao fim do método. Portanto, em um momento depois - equivalente ao durante a renderização da View - 
-ao tentarmos carregar um relacionamento lazy receberemos uma exceção.
----------------------------------------------------------------------------------------------------------------------
