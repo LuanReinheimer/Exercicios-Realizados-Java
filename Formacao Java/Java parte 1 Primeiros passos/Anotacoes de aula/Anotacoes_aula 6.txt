@@ -1,0 +1,175 @@
+Java parte 1: Primeiros passos
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Condições Java e instruções If :https://www.w3schools.com/java/java_conditions.asp
+Java suporta as condições lógicas usuais da matemática:
+
+Menor que: a < b
+Menor ou igual a: a <= b
+Maior que: a > b
+Maior ou igual a: a >= b
+Igual a: a == b
+Não é igual a: a != B
+Você pode usar essas condições para executar ações diferentes para decisões diferentes.
+================================================================================================================
+Java possui as seguintes instruções condicionais:
+
+Use if     para especificar um bloco de código a ser executado, se uma condição especificada for verdadeira
+Use else   para especificar um bloco de código a ser executado, se a mesma condição for falsa
+Use else   if para especificar uma nova condição para testar, se a primeira condição for falsa
+Use switch para especificar muitos blocos alternativos de código a serem executados.
+================================================================================================================
+A declaração if
+Use a ifinstrução para especificar um bloco de código Java a ser executado se uma condição for true.
+
+Sintaxe
+if (condition) {
+  // block of code to be executed if the condition is true
+}
+
+Exemplo:
+if (20 > 18) {
+  System.out.println("20 is greater than 18");
+}
+================================================================================================================
+A declaração else if
+Use a else ifinstrução para especificar uma nova condição se a primeira condição for false.
+
+Sintaxe
+if (condition1) {
+  // block of code to be executed if condition1 is true
+} else if (condition2) {
+  // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  // block of code to be executed if the condition1 is false and condition2 is false
+}
+
+Exemplo
+int time = 22;
+if (time < 10) {
+  System.out.println("Good morning.");
+} else if (time < 20) {
+  System.out.println("Good day.");
+} else {
+  System.out.println("Good evening.");
+}
+// Outputs "Good evening."
+
+================================================================================================================
+A declaração else
+Use a elseinstrução para especificar um bloco de código a ser executado se a condição for false.
+
+Sintaxe
+if (condition) {
+  // block of code to be executed if the condition is true
+} else {
+  // block of code to be executed if the condition is false
+}
+
+Exemplo:
+int time = 20;
+if (time < 18) {
+  System.out.println("Good day.");
+} else {
+  System.out.println("Good evening.");
+}
+// Outputs "Good evening."
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java Switch
+Instruções do comutador Java
+Use a switchinstrução para selecionar um dos muitos blocos de código a serem executados.
+
+Sintaxe
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+É assim que funciona:
+
+A switchexpressão é avaliada uma vez.
+O valor da expressão é comparado com os valores de cada um case.
+Se houver uma correspondência, o bloco de código associado será executado.
+As palavras break- defaultchave e são opcionais e serão descritas mais adiante neste capítulo
+O exemplo abaixo usa o número do dia da semana para calcular o nome do dia da semana:
+
+Exemplo
+int day = 4;
+switch (day) {
+  case 1:
+    System.out.println("Monday");
+    break;
+  case 2:
+    System.out.println("Tuesday");
+    break;
+  case 3:
+    System.out.println("Wednesday");
+    break;
+  case 4:
+    System.out.println("Thursday");
+    break;
+  case 5:
+    System.out.println("Friday");
+    break;
+  case 6:
+    System.out.println("Saturday");
+    break;
+  case 7:
+    System.out.println("Sunday");
+    break;
+}
+// Outputs "Thursday" (day 4)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+O break:
+Quando o Java alcança uma break palavra - chave, ele quebra o bloco do comutador.
+
+Isso interromperá a execução de mais testes de código e caso dentro do bloco.
+
+Quando uma correspondência é encontrada e o trabalho é concluído, é hora de uma pausa. Não há necessidade de mais testes.
+
+Uma interrupção pode economizar muito tempo de execução porque "ignora" a execução de todo o restante do código no bloco de chaves.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A palavra-chave default:
+A default palavra-chave especifica algum código a ser executado se não houver correspondência de caso:
+
+Exemplo
+int day = 4;
+switch (day) {
+  case 6:
+    System.out.println("Today is Saturday");
+    break;
+  case 7:
+    System.out.println("Today is Sunday");
+    break;
+  default:
+    System.out.println("Looking forward to the Weekend");
+}
+// Outputs "Looking forward to the Weekend"
+ 
+
+Observe que, se a default instrução for usada como a última instrução em um bloco de chave, ela não precisará de uma interrupção.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Nessa aula, aprendemos:
+
+como usar o if
+como usar as operações lógicas AND (&&) e OR (||)
+trabalhar com o escopo de variáveis
+Também já vimos alguns atalhos no Eclipse:
+
+main ctrl + espaço
+para gerar o método main
+ctrl + shift + f
+para formatar o código fonte
+sysout + ctrl + espaço
+para gerar a instrução System.out.println()

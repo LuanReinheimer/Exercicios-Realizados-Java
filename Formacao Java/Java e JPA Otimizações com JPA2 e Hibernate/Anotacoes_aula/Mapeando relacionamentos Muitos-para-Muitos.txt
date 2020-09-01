@@ -1,0 +1,42 @@
+Praticamente nenhuma aplicação existe sem bancos de dados. É importante saber como acessá-los com Java. 
+E a JPA é a principal tecnologia para isso, trabalhando um um mapeamento do seu modelo Java com as tabelas do banco.
+
+---------------------------------------------------------------------------------------------------------------------
+Nesta aula, aprendemos:
+
+O relacionamento de muitos para muitos, que evita duplicação;
+A existência da anotação @ManyToMany;
+Em um relacionamento de muitos para muitos uma tabela associativa é criada entre as classes do relacionamento;
+
+
+---------------------------------------------------------------------------------------------------------------------
+No JPA temos anotações para vários tipos de relacionamentos. Sabendo que temos uma classe Produto, que um produto 
+tem uma lista de categorias e uma categoria tem uma lista de produtos. Com base no código abaixo:
+
+@Entity
+public class Produto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private Loja loja;
+
+    private List<Categoria> categorias = new ArrayList<>();
+
+    // código omitido
+}
+Qual anotação usar para esse relacionamento? @ManyToMany
+---------------------------------------------------------------------------------------------------------------------
+
+Como vimos, podemos pensar no relacionamento entre Produto e Categoria como @OneToMany.
+Será que essa é a melhor forma de interpretar esse relacionamento?
+
+Não. Se configurarmos o relacionamento entre Produto e Categoria como @OneToMany
+faremos com que uma categoria seja apenas de um produto.
+
+No nosso sistema de catálogos, vários produtos compartilham categorias. Ao colocarmos @OneToMany uma mesma categoria só servirá para um 
+único produto o que fará com que apareçam várias categorias repetidas. Ao usar @ManyToMany a JPA criará uma tabela de relacionamento onde 
+cada registro será composto de chaves primárias das duas tabelas.
+---------------------------------------------------------------------------------------------------------------------
+
+Sabemos que @ManyToMany fará com que a JPA crie uma tabela, com um nome padrão, para guardar os id's das tabelas envolvidas no relacionamento.

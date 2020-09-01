@@ -1,0 +1,49 @@
+Java parte 1: Primeiros passos
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java Strings: https://www.w3schools.com/java/java_strings.asp
+As strings são usadas para armazenar texto.
+
+Uma Stringvariável contém uma coleção de caracteres entre aspas duplas:
+
+Exemplo
+Crie uma variável do tipo Stringe atribua um valor a ela:
+
+String greeting = "Hello";
+ Lembre-se, uma String é declarada com aspas duplas " e pode ter zero ou mais caracteres. 
+Um char é declarado com aspas simples ' e pode usar apenas um caractere!
+=====================================================================================================================================
+Comprimento da corda:
+Uma String em Java é na verdade um objeto, que contém métodos que podem executar determinadas operações em strings. Por exemplo, 
+o comprimento de uma sequência pode ser encontrado com o length()método:
+
+Exemplo
+String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+System.out.println("The length of the txt string is: " + txt.length());
+=====================================================================================================================================
+Concatenação de strings:
+O +operador pode ser usado entre cadeias para combiná-las. Isso é chamado de concatenação :
+
+Exemplo
+String firstName = "John";
+String lastName = "Doe";
+System.out.println(firstName + " " + lastName);
+
+Observe que adicionamos um texto vazio ("") para criar um espaço entre firstName e lastName na impressão.
+
+Você também pode usar o concat()método para concatenar duas seqüências de caracteres:
+
+Exemplo
+String firstName = "John ";
+String lastName = "Doe";
+System.out.println(firstName.concat(lastName));
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Este capítulo apresentou:
+
+O conceito e como declarar char e String
+Como concatenar Strings
+Atalho para criação da main
+Variáveis guardam valores e não referências

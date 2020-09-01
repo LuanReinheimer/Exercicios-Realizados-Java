@@ -1,0 +1,27 @@
+Maven: Build do zero a web
+
+Para mais teoria : https://www.devmedia.com.br/introducao-ao-maven/25128
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+O Apache Maven é uma excelente ferramenta de apoio a qualquer equipe que trabalhe com projetos Java (outras tecnologias também são suportadas), 
+fornecendo aos desenvolvedores uma forma de automatizar e padronizar a construção e publicação de suas aplicações.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+O que é o Maven?
+Em seu cerne, o Maven é uma ferramenta de gerenciamento e automação de construção (build) de projetos. Entretanto, por fornecer 
+diversas funcionalidades adicionais através do uso de plugins e estimular o emprego de melhores práticas de organização, desenvolvimento
+e manutenção de projetos, é muito mais do que apenas uma ferramenta auxiliar.
+
+Um desenvolvedor que seja alocado em um projeto Java EE que utilize o Maven corretamente não terá que saber de imediato quais dependências
+ (bibliotecas) o projeto necessita para compilar e executar, não precisará descobrir onde obtê-las e nem irá se preocupar em como realizar a construção do pacote do aplicativo. Com um comando simples, como mvn install, na raiz do código-fonte do projeto, instruirá o Maven a gerar o código extra necessário (cliente de um web service, por exemplo), validar e compilar o projeto, testá-lo através de seus testes unitários e gerar o pacote com o código compilado. Outras etapas poderiam incluir auditoria de qualidade de código, documentação, geração de estatísticas, entre diversas possibilidades.
+
+Outra característica do Maven é estimular a adoção de boas práticas, porque uma das formas utilizadas por ele para reduzir o esforço de configuração
+ do projeto é a utilização do conceito de programação por convenção (do inglês convention over configuration), em que a ferramenta assume que o seu usuário
+ fará as coisas da forma como ela preconiza como ideais (estrutura de diretórios padrão, por exemplo), e o livra de ter que declarar algo que se repetirá em todo projeto.
+ o incorporar as práticas aceitas pela comunidade Java como as mais indicadas para projetos Java EE, o Maven acaba não só disseminando-as para novos desenvolvedores, como
+ também as padroniza entre os projetos em que ele é empregado, permitindo que novatos se localizem muito mais rapidamente dentro de projetos novos. Obviamente, pode-se definir
+ manualmente o que é assumido como padrão, ao preço do aumento na carga de trabalho para a configuração inicial do projeto.
+
+O Maven hoje fornece suporte a outras tecnologias, inclusive .NET, mas neste artigo focaremos somente nos projetos Java EE.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Para mais informações sobre o Apache Maven: https://www.devmedia.com.br/introducao-ao-maven/25128#2

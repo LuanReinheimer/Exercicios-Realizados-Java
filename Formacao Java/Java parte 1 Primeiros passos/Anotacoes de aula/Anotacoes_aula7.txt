@@ -1,0 +1,148 @@
+Java parte 1: Primeiros passos
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java While Loop
+rotações
+Os loops podem executar um bloco de código desde que uma condição especificada seja atingida.
+
+Os loops são úteis porque economizam tempo, reduzem erros e tornam o código mais legível.
+
+================================================================================================================
+
+Java While Loop: https://www.w3schools.com/java/java_while_loop.asp
+O whileloop percorre um bloco de código desde que uma condição especificada seja true:
+
+Sintaxe
+while (condition) {
+  // code block to be executed
+}
+No exemplo abaixo, o código no loop será executado repetidamente, desde que uma variável (i) seja menor que 5:
+
+Exemplo
+int i = 0;
+while (i < 5) {
+  System.out.println(i);
+  i++;
+}
+================================================================================================================
+O loop Do / While
+O do/whileloop é uma variante do whileloop. Esse loop executará o bloco de código uma vez, antes de verificar se a 
+condição é verdadeira, e repetirá o loop enquanto a condição for verdadeira.
+
+Sintaxe
+do {
+  // code block to be executed
+}
+while (condition);
+O exemplo abaixo usa um do/whileloop. O loop sempre será executado pelo menos uma vez, mesmo se a condição for falsa, porque o 
+bloco de código é executado antes da condição ser testada:
+
+Exemplo
+int i = 0;
+do {
+  System.out.println(i);
+  i++;
+}
+while (i < 5);
+
+Não se esqueça de aumentar a variável usada na condição, caso contrário, o loop nunca terminará!
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Transformando while em for:
+
+Compare a sua resposta com a do instrutor e verifique se acertou!
+
+package projeto;
+
+public class Programa {
+    public static void main(String[] args) {
+        int contador = 0;
+        while(contador <= 10) {
+            System.out.println(contador);
+            contador++;
+        }
+    }
+}
+
+Como visto na aula, o for oferece uma opção de declaração mais enxuta, onde precisamos informar dentro dos parênteses 
+do for a inicialização da variável que irá servir de auxiliar para a condição de parada, a condição de parada que deve 
+ser verificada como verdadeira para que o laço seja executado e, por fim, a atualização do valor da variável auxiliar. 
+Lembrando que essas informações precisam ser separadas umas das outras por ponto e vírgula (;). A resposta ao desafio ficaria assim:
+
+package projeto;
+
+public class Programa {
+    public static void main(String[] args) {
+        for(int contador = 0; contador <= 10; contador++) {
+            System.out.println(contador);
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Java For Loop
+Quando você souber exatamente quantas vezes deseja fazer um loop através de um bloco de código, use o forloop em vez de um whileloop:
+
+Sintaxe
+for (instrução 1; instrução 2; instrução 3 ) {
+  // code block to be executed
+ }
+A instrução 1 é executada (uma vez) antes da execução do bloco de código.
+
+A instrução 2 define a condição para executar o bloco de código.
+
+A instrução 3 é executada (todas as vezes) após a execução do bloco de código.
+
+O exemplo abaixo imprimirá os números de 0 a 4:
+
+Exemplo
+for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}
+
+Exemplo explicado
+A instrução 1 define uma variável antes do início do loop (int i = 0).
+
+A instrução 2 define a condição para a execução do loop (i deve ser menor que 5). Se a condição for verdadeira, o loop será reiniciado novamente; se for falso, o loop será encerrado.
+
+A instrução 3 aumenta um valor (i ++) cada vez que o bloco de código no loop foi executado.
+
+Outro exemplo
+Este exemplo imprimirá apenas valores pares entre 0 e 10:
+
+Exemplo
+for (int i = 0; i <= 10; i = i + 2) {
+  System.out.println(i);
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java Break
+Você já viu a breakdeclaração usada em um capítulo anterior deste tutorial. Foi usado para "pular" de uma switchdeclaração.
+
+A breakinstrução também pode ser usada para pular de um loop .
+
+Este exemplo sai do loop quando i é igual a 4:
+
+Exemplo
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  System.out.println(i);
+}
+ 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Java Continue
+A continueinstrução interrompe uma iteração (no loop), se uma condição especificada ocorrer, e continua com a próxima iteração no loop.
+
+Este exemplo ignora o valor de 4:
+
+Exemplo
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    continue;
+  }
+  System.out.println(i);
+}
+

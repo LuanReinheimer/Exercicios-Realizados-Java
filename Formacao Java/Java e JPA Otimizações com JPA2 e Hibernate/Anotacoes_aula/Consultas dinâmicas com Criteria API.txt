@@ -1,0 +1,49 @@
+No segundo vídeo deste capítulo, onde montamos a nossa query usando Criteria API,
+usamos as duas sobrecargas do método toArray() da interface List.
+
+É importante ressaltar que, ao usar a versão do método sem argumentos, estaremos recebendo um Array de Object. 
+O que irá nos forçar a realizar um cast para Predicate de cada um dos elementos.
+
+Ao usar a versão sobrecarregada, que recebe um T[] (Array de um tipo genérico), os elementos da lista serão adicionados 
+no próprio Array passado como argumento. Se o mesmo estiver cheio, 
+um novo Array do mesmo tipo será criado para adicionar os elementos e retornado pelo método.
+
+Para mais informações sobre o toArray e os demais métodos da interface List podemos consultar o 
+Javadoc: https://docs.oracle.com/javase/8/docs/api/java/util/List.html
+---------------------------------------------------------------------------------------------------------------------
+Nesse capítulo, podemos conhecer diversos componentes da Criteria API como o CriteriaBuilder. 
+Usando o que aprendemos sobre ele, podemos afirmar que: corretas são.
+
+a) Ao montar uma query possuímos várias funções como sum() e avg()que nos fornecem informações importantes. Na Criteria API 
+criar expressões (ou Predicates) com essas funções é responsabilidade da CriteriaBuilder.
+
+c) Usamos a CriteriaBuilder para criar a CriteriaQuery.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Para conseguirmos navegar até os atributos de uma entidade, precisamos de uma raiz (Root). Qual das formas abaixo nos fornece um Root?
+
+CriteriaBuilder builder = em.getCriteriaBuilder();
+CriteriaQuery<Produto> query = builder.createQuery(Produto.class);
+Root<Produto> produtoRoot = query.from(Produto.class);
+
+O Root é quem define qual entidade estamos buscando, então, ela seria seria análoga - na SQL - a cláusula from. Portanto, usamos a classe 
+CriteriaQuery, que é a responsável em montar a query.
+
+---------------------------------------------------------------------------------------------------------------------
+Para saber mais: Conhecendo a Criteria API do Hibernate
+PRÓXIMA ATIVIDADE
+
+Desde a versão 3, o Hibernate possui uma API própria para montar as pesquisas: a Criteria. A aceitação do mercado foi bem grande e por isso, 
+na versão 2 da JPA, ela virou especificação. Porém as diferenças entre a versão do Hibernate e a versão da JPA são enormes, apenas a ideia é a 
+mesma. Vamos traduzir a query que escrevemos (usando Critéria do JPA) para buscar os produtos com vários filtros para Critéria do Hibernate.
+---------------------------------------------------------------------------------------------------------------------
+
+Nesta aula, aprendemos:
+
+a usar concatenação de strings para buscas avançadas, o que deixa nosso código complexo e difícil de se manter;
+O uso de join para buscar em relacionamentos *toMany;
+Como usar a Criteria API para realizar buscas dinâmicas;
+CriteriaQuery monta a query e CriteriaBuilder cria a CriteriaQuery (Factory Method) e tem métodos auxiliares para criar Predicates, Expressions e outras coisas;
+O uso de Predicates para criação de filtros.
+

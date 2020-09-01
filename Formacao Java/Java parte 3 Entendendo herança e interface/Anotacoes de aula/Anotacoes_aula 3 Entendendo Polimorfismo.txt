@@ -1,0 +1,80 @@
+Java parte 3: Entendendo herança e interface
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Polimorfismo e a capacidade de um objeto se comportar como outro, sendo assim assumindo vários estados. Por isso do prefixo “poli”.;https://www.w3schools.com/java/java_polymorphism.asp
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Polimorfismo Java: https://www.w3schools.com/java/java_polymorphism.asp
+Polimorfismo significa "muitas formas", e ocorre quando temos muitas classes que são relacionadas entre si por herança.
+
+Como especificamos no capítulo anterior; A herança nos permite herdar atributos e métodos de outra classe. O polimorfismo usa esses métodos para executar tarefas diferentes. Isso nos permite executar uma única ação de maneiras diferentes.
+
+Por exemplo, pense em uma superclasse chamada Animalque possui um método chamado animalSound(). As subclasses de animais podem ser porcos, gatos, cães, pássaros - e eles também têm sua própria implementação de um som animal (o porco oinks e o gato mia, etc.):
+
+Exemplo
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+Lembre-se do capítulo Herança que usamos a extendspalavra-chave para herdar de uma classe.
+
+Agora podemos criar Pige Dogobjetos e chamar o animalSound()método em ambos:
+
+Exemplo
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+
+class MyMainClass {
+  public static void main(String[] args) {
+    Animal myAnimal = new Animal();  // Create a Animal object
+    Animal myPig = new Pig();  // Create a Pig object
+    Animal myDog = new Dog();  // Create a Dog object
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
+  }
+}
+
+Por que e quando usar "herança" e "polimorfismo"?
+- É útil para reutilização de código: reutilize atributos e métodos de uma classe existente quando você cria uma nova classe.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Nessa aula aprendemos que:
+
+objetos não mudam de tipo;
+a referência pode mudar, e aí entra o polimorfismo;
+o polimorfismo permite usar referências mais genéricas para a comunicação com um objeto;
+o uso de referências mais genéricas permite desacoplar sistemas.
+No próximo vídeo vamos falar sobre como se comportam os construtores na herança.

@@ -1,0 +1,30 @@
+Java parte 3: Entendendo herança e interface
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Classes e métodos abstratos:
+Qual das afirmativas abaixo é verdadeira sobre os métodos abstratos?
+Não possuem corpo (implementação), apenas definem a assinatura.
+Correto, um método abstrato define apenas a assinatura (visibilidade, retorno, nome do método e parâmetros).
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sobre classes e métodos abstratos:
+Classes abstratas são úteis quando queremos utilizar comportamentos e atributos base em classes com comportamentos em comum.
+Na verdade esta alternativa está correta! Os benefícios da herança continuam valendo!
+==================================================================================================================================
+Usamos métodos abstratos quando queremos "forçar" que um filho concreto (classe concreta) implemente um método.
+Na verdade esta alternativa está correta! E esse é o sentido de métodos abstratos, garantir que o filho implemente um comportamento.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+O que é verdade sobre classes abstratas? Selecione todas as afirmações verdadeiras:
+Podem ter atributos - Correto, podemos sim ter atributos! Uma classes abstrata é uma classe normal, só não pode instanciar e pode ter métodos abstratos. O resto continua valendo!
+Podem ter métodos concretos (com implementação)- Correto, como podem ter atributos também podem ter métodos concretos!
+Podem ter métodos abstratos (sem implementação)- Correto, como vimos uma classe abstrata pode ter métodos sem implementação. Dessa forma obrigamos um filho implementar o método.
+Não podem ser instanciadas- Correto, pois o que é abstrato (a classe) não pode se tornar concreto (objeto). Por isso não podemos instanciar objetos de uma classe abstrata.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nessa aula aprendemos:
+
+O que são classes abstratas
+Para que servem classes abstratas
+O que são métodos abstratos
+Para que servem métodos abstratos
+Na próxima aula veremos sobre o uso de Interfaces!
