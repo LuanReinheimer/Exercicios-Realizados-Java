@@ -1,0 +1,43 @@
+Java parte 4: Entendendo exceções
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Marque as alternativas verdadeiras sobre exceções em Java:
+
+Toda exceção em Java possui um nome que a identifica. Essa abordagem torna seu entendimento mais fácil do que o uso de números mágicos (códigos de erros) como 15, 7012 ou 16.
+Exceções não tratadas caem na pilha de execução procurando por alguém que saiba lidar com ela.
+==============================================================================================================================================================================
+Marque as alternativas verdadeiras sobre os blocos try e catch:
+Para tratarmos uma exceção, que pode ocorrer enquanto nosso programa esta sendo executado, precisamos tratá-la antecipadamente com um bloco de código específico.
+Exato, justamente o bloco try-catch.
+
+Não é possível ter uma instrução catch, sem uma instrução try.
+Exato. A lógica de tratamento de erro no bloco catch só é disparada quando uma exceção é lançada dentro de um bloco try.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Java try and catch
+A tryinstrução permite definir um bloco de código a ser testado quanto a erros enquanto ele está sendo executado.
+
+A catchinstrução permite definir um bloco de código a ser executado, se ocorrer um erro no bloco try.
+
+As palavras try- catchchave e vêm em pares:
+
+Sintaxe
+try {
+  //  Block of code to try
+}
+catch(Exception e) {
+  //  Block of code to handle errors
+}
+
+Finalmente
+A finallyinstrução permite executar o código depois try...catch, independentemente do resultado:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nessa aula, aprendemos:
+
+O que são exceções, para que servem e porquê utilizá-las.
+Como analisar o rastro de exceções, ou stacktrace.
+Tratar exceções com os blocos try-catch.
+Manipular uma exceção lançada dentro do bloco catch.
+Tratar múltiplas exceções com mais de um bloco catch ou usando Multi-Catch utilizando o pipe (|).

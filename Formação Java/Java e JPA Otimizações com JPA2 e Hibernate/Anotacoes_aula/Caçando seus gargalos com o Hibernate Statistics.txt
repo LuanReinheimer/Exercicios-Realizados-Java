@@ -1,0 +1,56 @@
+Deixando Statistics Acessível
+
+Nosso SpringMVC já está configurado para tornar esse acesso possível, basta adicionarmos Statistics ao contexto do Spring. Faremos isso na classe Configurador:
+
+@Bean
+public Statistics statistics(EntityManagerFactory emf) { 
+    return emf.unwrap(SessionFactory.class).getStatistics();
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+No blog da Caelum existe um artigo justamente explicando o uso das estatísticas do Hibernate. Nesse artigo são apresentadas outras propriedades 
+interessantes que não foram vistas no vídeo como, por exemplo, o TransactionCount, oSuccessfulTransactionCount e o QueryExecutionMaxTime:
+
+http://blog.caelum.com.br/cacando-seus-gargalos-com-o-hibernate-statistics/
+
+Segue também o link do JavaDoc dessa classe:
+
+http://docs.jboss.org/hibernate/core/4.3/javadocs/org/hibernate/stat/Statistics.html
+
+Vale a pena explorar!
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Abaixo, você pode analisar as alterações feitas nesse capítulo. Resumidamente:
+
+Configuramos o Hibernate Statistics, pois por padrão, esse recurso vem desabilitado:
+@Bean
+public LocalContainerEntityManagerFactoryBean getEntityManagerFactory(DataSource dataSource) {
+    ...    
+    props.setProperty("hibernate.generate_statistics", "true");
+    ...
+}
+Deixamos o objeto interno do Hibernate chamado SessionFactory e, a partir dele, pegamos a instância do objeto Statistics. Para que o objeto ficasse acessível à nossa view, configuramos o SpringMVC da seguinte maneira (na classe JPAConfigurator):
+@Bean
+public Statistics statistics(EntityManagerFactory emf) { 
+    return emf.unwrap(SessionFactory.class).getStatistics();
+}
+No arquivo WEB-INF/views/estatisticas/index.jsp exibimos os relatórios do Hibernate Statistics:
+
+<tr>
+    <td>Cache</td>
+    <!-- Hit -->
+    <td>${statistics.queryCacheHitCount}</td>
+    <!-- Miss -->
+    <td>${statistics.queryCacheMissCount}</td>
+    <!-- Connections Count-->
+    <td>${statistics.connectCount}</td>
+</tr>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Nesta aula, aprendemos:
+
+Como configurar o Hibernate Statistics;
+Usar Hibernate Statistics para analisar dados de Hit/Miss de cache de queries;

@@ -1,0 +1,60 @@
+Java: Dominando as Collections
+
+Para mais teoria : https://www.w3schools.com/java/java_arraylist.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Conjuntos ou Set<E>
+
+Uma coleção que não contém elementos duplicadose não possui getPosicao.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Java HashSet: https://www.w3schools.com/java/java_hashset.asp
+
+Um HashSet é uma coleção de itens em que cada item é único e pode ser encontrado no java.util pacote:
+
+Adicionar itens
+A HashSetclasse tem muitos métodos úteis. Por exemplo, para adicionar itens a ele, use o add()método:
+
+Exemplo
+// Import the HashSet class
+import java.util.HashSet;
+
+public class MyClass {
+  public static void main(String[] args) {
+    HashSet<String> cars = new HashSet<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("BMW");
+    cars.add("Mazda");
+    System.out.println(cars);
+  }
+}
+OBS: No exemplo acima, embora a BMW seja adicionada duas vezes, ela aparece apenas uma vez no conjunto, pois cada item de um conjunto precisa ser exclusivo.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Verifique se existe um item
+Para verificar se um item existe em um HashSet, use o contains()método:
+
+Exemplo
+cars.contains("Mazda");
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Remover um item
+Para remover um item, use o remove()método:
+
+Exemplo
+cars.remove("Volvo");
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sobre o conjunto Set, quais das afirmações abaixo são verdadeiras?
+Um conjunto não aceita elementos repetidos
+Um Set garante que nenhum elemento se repete. Por isso o método add(..) devolve um booleano que indica o sucesso da inserção.
+
+Há métodos que fazem busca por um objeto, como contains(..) ou remove(..), que são muito mais rápidos se comparado com uma lista.
+Isso é uma grande vantagem. Devido a implementação do Set (aquela tabela de espalhamento), o acesso aos elementos é muito rápido
+
+Um conjunto não garante a ordem de inserção
+Diferentemente de uma lista, um conjunto não define uma ordem. Isso significa que não recebemos os elementos na mesma ordem da inserção.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+

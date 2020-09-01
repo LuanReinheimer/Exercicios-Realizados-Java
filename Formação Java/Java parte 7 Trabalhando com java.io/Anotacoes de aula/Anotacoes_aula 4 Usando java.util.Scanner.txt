@@ -1,0 +1,19 @@
+Java parte 7: Trabalhando com java.io
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+As vezes recebemos texto de um arquivo e queremos mostrar o conteúdo de forma isolada.
+
+No vídeo vimos que cada linha continha informações de conta, neste caso, separamos as informações da conta.
+
+Qual o método de Scanner responsável por separar o conteúdo por um delimitador?
+scanner.useDelimiter(",");
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nesta aula aprendemos mais sobre a Scanner e também formatacão de texto. Segue a lista:
+
+Leitura de arquivos com Scanner
+Uso de delimitador com Scanner
+Formatação de texto e também de números
+Definição de Localização para formatar o texto.
+É isso aí! Continue assim! Nos vemos na próxima aula!

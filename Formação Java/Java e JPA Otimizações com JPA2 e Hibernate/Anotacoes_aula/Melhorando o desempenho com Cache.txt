@@ -1,0 +1,107 @@
+Utilidade do Cache
+
+Quais dessas afirmações se encaixam na definição de cache?
+
+Para melhorar a performance, já que este reduz a comunicação remota com o banco de dados.
+
+O cache serve para melhorar a performance da nossa aplicação. O sistema primeiro consulta o cache e verifica se ele já 
+contêm a informação que buscamos, depois, se necessário, acessa o banco de dados. O acesso ao banco é uma operação computacionalmente custosa.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+O que é o cache de primeiro nível e qual problema de utilizá-lo em uma aplicação Web ?
+
+O cache de primeiro nível é o cache que vem por padrão nos EntityManagers. Ele nos impede de carregar duas vezes a mesma entidade do 
+banco e, dessa forma, evita um acesso desnecessário.
+
+O problema de utilizarmos o cache de primeiro nível da nossa aplicação é que nós já configuramos que seja criado um novo EntityManager a cada 
+requisição. Ou seja, como cada requisição possui o seu próprio EntityManager, e, cada um destes, 
+o seu próprio cache, os dados do cache acabam se perdendo quando a requisição termina, além de não serem reaproveitados entre requisições.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Habilitando cache de segundo nível
+
+Qual é o nome da propriedade que devemos colocar junto ao valor true para habilitar o cache de segundo nível no Hibernate? E que por padrão vem desabilitada?
+
+hibernate.cache.use_second_level_cache
+
+O nome da propriedade é hibernate.cache.use_second_level_cache.
+
+Na nossa aplicação, devemos configurar isso na classe JpaConfiguration da seguinte maneira:
+
+public class JpaConfigurator {
+    ...
+    @Bean
+    public LocalContainerEntityManagerFactoryBean getEntityManagerFactory(DataSource dataSource) {
+
+        ...
+        props.setProperty("hibernate.cache.use_second_level_cache", "true");
+        ...
+    }
+}
+Porém, se estivéssemos utilizando o persistence.xml, adicionaríamos uma tag com a mesma propriedade:
+
+<property name="hibernate.cache.use_second_level_cache" value="true" />
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Configurando o provider
+
+Além de habilitar o cache de segundo nível, devemos também dizer ao Hibernate qual provider queremos utilizar. Qual valor devemos setar com a 
+propriedade hibernate.cache.region.factory_class para configurar o provider EhCache ?
+
+org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
+
+Para configurarmos o provider EhCache no Hibernate devemos setar a propriedade hibernate.cache.region.factory_class com o valor org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory.
+
+Teremos em nossa aplicação:
+
+public class JpaConfigurator {
+    ...
+    @Bean
+    public LocalContainerEntityManagerFactoryBean getEntityManagerFactory(DataSource dataSource) {
+
+        ...
+        props.setProperty("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory");
+        ...
+    }
+}
+Ou, no persistence.xml:
+
+<property name="hibernate.cache.use_second_level_cache" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory" />
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Quais das estratégias abaixo são opções de concorrência válidas:
+
+1- READ_ONLY
+
+2- READ_WRITE
+
+3- NONSTRICT_READ_WRITE
+
+4- TRANSACTIONAL
+
+TODAS!!
+
+A estratégia READ_ONLY deve ser utilizada quando uma entidade não deve ser modificada.
+
+A estratégia READ_WRITE deve ser utilizada quando uma entidade pode ser modificada e há grandes chances que modificações em seu estado ocorram simultaneamente. 
+Essa estratégia é a que mais consome recursos.
+
+A estratégia NONSTRICT_READ_WRITE deve ser utilizada quando uma entidade pode ser modificada, mas é incomum que as alterações ocorram ao mesmo tempo. 
+Ela consome menos recursos que a estratégia READ_WRITE e é ideal quando não há problemas de dados inconsistentes serem lidos quando ocorrem alterações simultâneas.
+
+A estratégia TRANSACTIONAL deve ser utilizada em ambientes JTA, como por exemplo em servidores de aplicação.
+Como utilizamos Tomcat com Spring (sem JTA) essa opção não funcionará
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+O que aprendemos?
+
+Por padrão o Hibernate já utiliza um cache de entidades por EntityManager chamado de cache de primeiro nível;
+Usar cache melhora a performance já que reduz a comunicação remota;
+Em aplicações Web, o cache de primeiro nível não resolve nosso problema já que usamos vários EntityManagers;
+O cache de segundo nível resolve esse problema sendo compartilhado por diversos EntityManagers;
+Configurar o EhCache como provedor de cache de segundo nível;
+Cache de collections e de queries retornam apenas os ids dos relacionamentos.

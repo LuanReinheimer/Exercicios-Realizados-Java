@@ -1,0 +1,21 @@
+Java parte 3: Entendendo herança e interface
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Revisando conceitos de herança
+Como vimos durante o curso e revisamos durante este capítulo, quais das afirmativas abaixo descreve uma vantagem do uso de herança?
+A herança captura o que é comum e isola aquilo que é diferente entre classes.
+========================================================================================================================================
+Como vimos durante o curso e revisamos durante este capítulo, quais das afirmativas abaixo descreve uma vantagem do uso de interfaces?
+Garante que todos os métodos de classes que implementam uma interface possam ser chamados com segurança.
+========================================================================================================================================
+Qual das afirmativas a seguir representa uma vantagem do uso de composição e interfaces sobre o uso de herança?
+Com composições e interfaces teremos mais flexibilidade com nosso código, já que não nos prenderemos ao acoplamento que a herança propõe.
+========================================================================================================================================
+
+Nessa aula, aprendemos:
+
+Mais a fundo sobre o uso de interfaces
+Trabalhamos mais a fundo com herança
+Vimos outras aplicações de heranças e interfaces

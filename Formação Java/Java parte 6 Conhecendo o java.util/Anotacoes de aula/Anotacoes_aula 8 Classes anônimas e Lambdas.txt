@@ -1,0 +1,11 @@
+Java parte 6: Conhecendo o java.util
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Como chamamos esse objeto que só encapsula uma função/método/procedimento?
+Function Object
+Perfeito, um objeto que criamos para encapsular uma função ou método. As classes anônimas facilitam um pouco a criação desses objetos.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sobre Lambdas : https://www.devmedia.com.br/como-usar-funcoes-lambda-em-java/32826

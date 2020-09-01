@@ -1,0 +1,61 @@
+Java parte 1: Primeiros passos
+
+Para mais teoria : https://www.w3schools.com/java/default.asp
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Qual é o grande benefício de uma Máquina Virtual Java (JVM)?
+Executar o código independente do sistema operacional.
+
+
+Correto, no mundo Java você terá sempre o mesmo "executável" ou Bytecode que será executado pela Maquina Virtual Java, totalmente independente do sistema operacional. 
+Assim não é preciso rescrever ou adaptar o código para rodar em um outro sistema operacional. Temos um único executável para todos os sistemas!
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+A linguagem Java nasceu com algumas características que são mantidas até hoje.
+
+Selecione todas que se aplicam:
+
+Alternativa incorreta
+Parecido com C++.
+
+
+Correto, Java nasceu sendo parecido com C++ que era a linguagem mais popular na época.
+
+Alternativa incorreta
+Muitas bibliotecas.
+
+
+Correto, desde o início o Java possui muitas bibliotecas que ainda muito aumentaram devido as milhares de contribuições da comunidade open source.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dependendo da linguagem de programação existem vários tipos de sistemas que você pode desenvolver, como por exemplo:
+
+a) Sistemas para Web (Web Sites ou Web Apps)
+
+b) Sistemas puramente "Server-Side"
+
+c) Aplicativos para Android
+
+d) Applets que rodam no navegador
+Correto, seja web ou puramente server-side, aplicativo Android ou um antigo applet, Java atende todas essas áreas! 
+No entanto, os sistemas web e Android são os que mais fizeram sucesso no mundo Java e mais empregam desenvolvedores.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nessa aula introdutória já aprendemos vários assuntos fundamentais sobre Java.
+
+Falamos sobre as principais características da linguagem Java como:
+
+orientado a objetos
+parecido com C++
+muitas bibliotecas e grande comunidade
+Além disso, aprendemos:
+
+a diferença entre o código fonte e o Bytecode
+para executar o Bytecode é preciso ter a máquina virtual java
+o Bytecode é independente do sistema operacional
+Vimos também os principais componentes da plataforma Java que são:
+
+Java Virtual Machine (JVM)
+linguagem Java
+Bibliotecas Java (API)
+Na próxima aula já vamos escrever o primeiro código Java! 
+
